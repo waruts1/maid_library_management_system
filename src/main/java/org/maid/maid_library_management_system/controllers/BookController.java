@@ -53,7 +53,7 @@ public class BookController {
                     schema = @Schema(implementation = Book.class)) }),
             @ApiResponse(responseCode = "404", description = "Book not found",
                     content = @Content) })
-    @DeleteMapping("/employees/{employeeId}")
+    @DeleteMapping("/book/{bookId}")
     public String deleteBook(@Parameter(
             description = "ID of book to be retrieved",
             required = true)@PathVariable int bookId) {
