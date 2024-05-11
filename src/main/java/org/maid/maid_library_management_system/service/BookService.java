@@ -1,12 +1,10 @@
 package org.maid.maid_library_management_system.service;
 
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.maid.maid_library_management_system.controllers.DTO.BookDTO;
 import org.maid.maid_library_management_system.entity.Book;
 import org.maid.maid_library_management_system.repository.BookRepository;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

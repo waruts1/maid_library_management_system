@@ -2,7 +2,6 @@ package org.maid.maid_library_management_system.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.maid.maid_library_management_system.controllers.DTO.BookDTO;
 
 import java.time.LocalDateTime;
 
