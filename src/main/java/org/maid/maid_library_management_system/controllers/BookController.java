@@ -51,7 +51,7 @@ public class BookController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", content = { @Content(mediaType = "application/json",
                     schema = @Schema(implementation = Book.class)) }),
-            @ApiResponse(responseCode = "404", description = "Employee not found",
+            @ApiResponse(responseCode = "404", description = "Book not found",
                     content = @Content) })
     @DeleteMapping("/employees/{employeeId}")
     public String deleteBook(@Parameter(
