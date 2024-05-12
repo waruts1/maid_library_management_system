@@ -43,9 +43,28 @@ public class BookController {
         return bookService.fetchById(id);
     }
 
+    @Operation(summary = "Alter Books",
+            description = "Add Book.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = { @Content(mediaType = "application/json",
+                    schema = @Schema(implementation = Book.class)) }),
+            @ApiResponse(responseCode = "404", description = "Validation Failed",
+                    content = @Content) })
     @PostMapping("book")
     public Book addBook(@RequestBody @Valid BookDTO bookDTO){
         return bookService.addBook(bookDTO);
+    }
+
+    @Operation(summary = "Alter Books",
+            description = "Update Book.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Dynamic Update Enabled",content = { @Content(mediaType = "application/json",
+                    schema = @Schema(implementation = Book.class)) }),
+            @ApiResponse(responseCode = "404", description = "Book not found / Validation Failed",
+                    content = @Content) })
+    @PutMapping("book/{bookId}")
+    public Book updateBook(@RequestBody @Valid BookDTO bookDTO, @PathVariable Integer bookId){
+        return bookService.updateBook(bookDTO, bookId);
     }
 
     @ApiResponses({

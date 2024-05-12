@@ -1,13 +1,26 @@
-//package org.maid.maid_library_management_system.entity;
-//
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.Id;
-//
-//@Entity
-//public class Patron {
-//    @Id
-//    @GeneratedValue
-//    private Long id;
-//
-//}
+package org.maid.maid_library_management_system.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Data
+@NoArgsConstructor
+@DynamicUpdate
+public class Patron {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "patron_generator")
+    @SequenceGenerator(name = "patron_generator", sequenceName = "patron_seq", allocationSize = 1)
+    private Integer id;
+    private String contactName;
+    private String contactNumber;
+    @Email
+    private String email;
+}

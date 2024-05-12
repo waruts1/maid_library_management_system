@@ -15,13 +15,10 @@ CREATE TABLE IF NOT EXISTS book
 CREATE TABLE IF NOT EXISTS borrowing_record
 (
     id                 integer,
-    book_id            character varying(100) NOT NULL,
-    patron_id          character varying(13)  NOT NULL,
+    book_id            integer NOT NULL,
+    patron_id          integer  NOT NULL,
     borrowing_date     character varying,
-    return_date        timestamp,
-    date_created       timestamp,
-    last_modified_by   character varying,
-    last_modified_date timestamp,
+    return_date     character varying,
     PRIMARY KEY (id)
 );
 
@@ -32,9 +29,6 @@ CREATE TABLE IF NOT EXISTS patron
     contact_name       character varying(100) NOT NULL,
     contact_number     character varying(13)  NOT NULL,
     email              character varying(50)  NOT NULL,
-    date_created       timestamp,
-    last_modified_by   character varying,
-    last_modified_date timestamp,
     PRIMARY KEY (id)
 );
 
