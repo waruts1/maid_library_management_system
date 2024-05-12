@@ -7,17 +7,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.maid.maid_library_management_system.controllers.DTO.response.OutputStringDTO;
-import org.maid.maid_library_management_system.entity.Book;
 import org.maid.maid_library_management_system.entity.BorrowingRecord;
-import org.maid.maid_library_management_system.entity.Patron;
 import org.maid.maid_library_management_system.service.BorrowService;
-import org.maid.maid_library_management_system.service.PatronService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping()
